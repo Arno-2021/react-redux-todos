@@ -47,6 +47,7 @@ export default function TodoItem({ item }) {
                     onChange={e => setCurrentMsg(e.target.value)}
                     onKeyUp={e => {
                         if (e.code === 'Enter') {
+                            if (!currentMsg.trim()) return
                             setCurrentId('')
                             dispatch(editItem(item.id, currentMsg))
                         }
