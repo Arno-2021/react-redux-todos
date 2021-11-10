@@ -2,5 +2,12 @@ import ReactDOM from 'react-dom'
 import './styles/base.css'
 import './styles/index.css'
 import App from './App'
+import store from './store'
+import { Provider } from 'react-redux'
 
-ReactDOM.render(<App></App>, document.getElementById('root'))
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
+)
